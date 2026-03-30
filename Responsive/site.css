@@ -16,6 +16,15 @@ a {
     text-decoration: none;
 }
 
+* {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 
 /* ── NAVBAR (#navbar) ───────────────────────────── */
 
@@ -981,306 +990,179 @@ a {
 }
 
 
-/* ================================================
-   RESPONSIVE STYLES — Media Queries
-   ================================================ */
+/* ── RESPONSIVE LAYOUTS (TABLET + MOBILE) ─────── */
 
-/* ── TABLET (≤ 900px) ────────────────────────────── */
-
-@media (max-width: 900px) {
-
-    /* Navbar — reduce padding, allow wrapping */
+@media (max-width: 1024px) {
     #navbar {
-        padding: 12px 20px;
-        flex-wrap: wrap;
-        gap: 10px;
+        padding: 14px 24px;
     }
 
     #navbar nav ul {
         gap: 16px;
-    }
-
-    #navbar nav ul li a {
-        font-size: 11px;
-    }
-
-    /* Hero — smaller height and text */
-    #hero {
-        height: 420px;
-    }
-
-    #hero-content {
-        left: 30px;
-        max-width: 400px;
-    }
-
-    .hero-title {
-        font-size: 52px;
-    }
-
-    .hero-subtitle {
-        font-size: 20px;
-    }
-
-    /* Steps — stack text above images */
-    #how-it-works,
-    #step-02,
-    #step-03 {
-        padding: 40px 30px;
-    }
-
-    .how-row {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .how-images {
-        flex: unset;
-        width: 100%;
+        flex-wrap: wrap;
         justify-content: center;
     }
 
-    .img-tall {
-        width: 100% !important;
-        height: 300px !important;
+    #how-it-works,
+    #step-02,
+    #step-03,
+    #press,
+    #portfolio,
+    #reviews,
+    #design-help,
+    #footer {
+        padding-left: 32px;
+        padding-right: 32px;
     }
 
-    .img-small {
-        width: 100% !important;
-        height: 180px !important;
-    }
-
-    .img-wide {
-        width: 100% !important;
-        height: 300px !important;
-    }
-
-    /* Pricing — stack cards vertically */
-    #pricing-cards {
+    #pricing-cards,
+    #reviews-inner,
+    #reviews-cards,
+    #partners {
         flex-direction: column;
-        align-items: center;
     }
 
     .price-card {
-        width: 100%;
-        max-width: 480px;
+        width: min(100%, 560px);
     }
 
-    /* Press — allow logos to wrap */
-    #press {
-        padding: 40px 30px 20px;
-    }
-
-    #press-logos {
-        flex-wrap: wrap;
-        gap: 24px;
-    }
-
-    /* Portfolio */
-    #portfolio {
-        padding: 50px 30px 40px;
-    }
-
-    #room-tabs {
-        flex-wrap: wrap;
-    }
-
-    /* Client tabs — scroll horizontally */
-    #client-tabs {
-        padding: 0 20px;
-        overflow-x: auto;
-    }
-
-    #client-tabs ul {
-        white-space: nowrap;
-        width: max-content;
-    }
-
-    /* Before/After — shorter images */
-    .ba-side img {
-        height: 350px;
-    }
-
-    /* Reviews — stack left + cards */
-    #reviews {
-        padding: 40px 30px 0;
-    }
-
-    #reviews-inner {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    #reviews-left {
-        flex: unset;
-        width: 100%;
-    }
-
-    #reviews-cards {
-        flex-direction: column;
-    }
-
-    /* Partners — stack image below text */
-    #partners {
-        flex-direction: column;
-        min-height: unset;
-    }
-
-    #partners-left {
-        padding: 50px 30px;
-    }
-
-    #partners-right {
-        min-height: 300px;
-    }
-
-    /* Guarantee */
     #guarantee {
-        padding: 40px 30px;
-    }
-
-    /* Footer — two columns */
-    #footer {
-        padding: 50px 30px 0;
+        padding: 45px 60px;
     }
 
     #footer-columns {
         flex-wrap: wrap;
-        gap: 30px;
     }
 
     .footer-col {
-        flex: 1 1 calc(50% - 30px);
-        min-width: 160px;
+        min-width: 240px;
     }
-
-    #footer-bottom {
-        flex-direction: column;
-        gap: 12px;
-        text-align: center;
-    }
-
-    #footer-bottom-links {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
 }
 
-
-/* ── MOBILE (≤ 600px) ────────────────────────────── */
-
-@media (max-width: 600px) {
-
-    /* Navbar — hide nav links to save space */
-    #navbar nav {
-        display: none;
-    }
-
+@media (max-width: 768px) {
     #navbar {
+        flex-wrap: wrap;
+        gap: 10px;
         padding: 12px 16px;
     }
 
-    .btn-login {
-        padding: 6px 14px;
-        font-size: 11px;
+    #logo {
+        width: 100%;
+        text-align: center;
     }
 
-    .btn-get-started {
-        padding: 8px 14px;
-        font-size: 11px;
+    #navbar nav {
+        width: 100%;
     }
 
-    /* Promo banner — stack items vertically */
+    #navbar nav ul {
+        gap: 10px;
+        justify-content: center;
+    }
+
+    #navbar nav ul li a {
+        font-size: 12px;
+    }
+
+    .nav-buttons {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
     #promo-banner {
         flex-direction: column;
         gap: 12px;
         padding: 16px;
-        font-size: 13px;
     }
 
     .promo-divider {
         display: none;
     }
 
-    /* Hero — compact */
     #hero {
-        height: 360px;
+        min-height: 420px;
+        height: auto;
     }
 
     #hero-content {
-        left: 20px;
-        right: 20px;
+        position: static;
+        transform: none;
         max-width: 100%;
+        padding: 46px 16px 40px;
     }
 
     .hero-title {
-        font-size: 38px;
+        font-size: 46px;
     }
 
     .hero-subtitle {
-        font-size: 16px;
+        font-size: 22px;
     }
 
-    /* Steps — tighter padding and smaller text */
     #how-it-works,
     #step-02,
-    #step-03 {
-        padding: 30px 16px;
-    }
-
-    .step-number {
-        font-size: 44px;
-    }
-
-    .step-heading {
-        font-size: 20px;
-    }
-
-    /* Pricing */
-    #pricing {
+    #step-03,
+    #press,
+    #portfolio,
+    #design-help,
+    #footer {
         padding: 40px 16px;
+    }
+
+    .how-row,
+    #reviews-inner,
+    #reviews-cards,
+    #partners,
+    #pricing-cards {
+        flex-direction: column;
+    }
+
+    .how-images {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .img-stack {
+        width: 100%;
+    }
+
+    .img-tall,
+    .img-small,
+    .img-wide {
+        width: 100%;
+        height: auto;
+    }
+
+    #pricing {
+        padding: 48px 16px;
     }
 
     .price-card {
         width: 100%;
-        max-width: 100%;
-        padding: 30px 20px;
+        padding: 28px 20px;
     }
 
-    /* Press */
-    #press {
-        padding: 30px 16px 20px;
+    #press-logos,
+    #room-tabs {
+        flex-wrap: wrap;
+        gap: 14px;
     }
 
-    #press-quote {
-        font-size: 20px;
+    #client-tabs {
+        padding: 0 12px;
+        overflow-x: auto;
     }
 
-    .logo-vogue {
-        font-size: 20px;
+    #client-tabs ul {
+        width: max-content;
+        flex-wrap: nowrap;
     }
 
-    .logo-nyt {
-        font-size: 15px;
-    }
-
-    /* Portfolio */
-    #portfolio {
-        padding: 40px 16px 30px;
-    }
-
-    #portfolio-heading {
-        font-size: 28px;
-    }
-
-    /* Client tabs */
     .client-tab {
-        padding: 12px 14px;
-        font-size: 12px;
+        padding: 14px 16px;
     }
 
-    /* Before/After — stack images vertically on very small screens */
     #ba-viewer {
         flex-direction: column;
     }
@@ -1290,61 +1172,64 @@ a {
     }
 
     .ba-side img {
-        height: 250px;
+        height: auto;
     }
 
     #ba-label {
-        display: none;
+        position: static;
+        transform: none;
+        margin: 12px auto;
     }
 
-    /* Reviews */
     #reviews {
-        padding: 30px 16px 0;
-    }
-
-    #reviews-heading {
-        font-size: 26px;
-    }
-
-    /* Design Help */
-    #design-help {
-        padding: 50px 16px 40px;
-    }
-
-    #design-help-heading {
-        font-size: 32px;
-    }
-
-    /* Partners */
-    #partners-left {
-        padding: 40px 16px;
-    }
-
-    .brand-faded,
-    .brand-bold {
-        font-size: 26px;
-    }
-
-    /* Guarantee */
-    #guarantee {
-        padding: 40px 16px;
-    }
-
-    #guarantee-text {
-        font-size: 16px;
-    }
-
-    /* Footer — single column */
-    #footer {
         padding: 40px 16px 0;
     }
 
+    #reviews-heading {
+        font-size: 28px;
+    }
+
+    #design-help-heading {
+        font-size: 40px;
+    }
+
+    #partners {
+        min-height: auto;
+    }
+
+    #partners-left {
+        padding: 44px 20px;
+    }
+
+    #partners-right {
+        min-height: 300px;
+    }
+
+    #guarantee {
+        padding: 36px 16px;
+    }
+
+    #guarantee-text {
+        font-size: 20px;
+    }
+
+    #footer-columns {
+        gap: 24px;
+        padding-bottom: 40px;
+    }
+
     .footer-col {
-        flex: 1 1 100%;
+        min-width: 100%;
     }
 
-    .locations-grid {
-        grid-template-columns: 1fr;
+    #footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
     }
 
+    #footer-bottom-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
